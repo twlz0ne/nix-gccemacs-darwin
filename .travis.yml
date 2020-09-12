@@ -1,0 +1,33 @@
+language: ruby
+rvm: system
+os: osx
+
+matrix:
+  include:
+    - env: OSX=10.12
+      compiler: clang
+      osx_image: xcode9.2
+
+cache:
+  directories:
+    - /usr/local/Homebrew/Library/Homebrew/vendor/bundle
+
+branches:
+  only:
+    - master
+
+before_install:
+  - sudo chown -R "$USER" "$(brew --repo)"
+  - travis_retry brew update
+  - HOMEBREW_TAP_DIR="$(brew --repo "$TRAVIS_REPO_SLUG")"
+  - mkdir -p "$HOMEBREW_TAP_DIR"
+  - rm -rf "$HOMEBREW_TAP_DIR"
+  - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+
+script:
+  - |
+    git clone --depth 1 https://github.com/jimeh/build-emacs-for-macos build-emacs-for-macos
+    cd build-emacs-for-macos
+    brew bundle
+    ./build-emacs-for-macos
+  - emacs --version
