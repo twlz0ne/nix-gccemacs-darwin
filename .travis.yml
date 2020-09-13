@@ -12,5 +12,8 @@ install:
   - ./install.sh
 
 script:
-  - nix-env -i emacsGcc -f build.nix -v
-  - emacs --version
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install
+  - cachix use gccemacs-darwin
+  - if [ -n "$CACHIX_SIGNING_KEY" ]; then cachix push gccemacs-darwin --watch-store; fi &
+  - nix-env -iA emacsGcc -f build.nix
+  - sleep 10 # to allow cachix finish uploading
