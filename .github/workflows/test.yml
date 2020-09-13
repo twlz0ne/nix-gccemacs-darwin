@@ -18,5 +18,5 @@ jobs:
       with:
         name: gccemacs-darwin
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-    - run: nix-env -iA emacsGccDarwin -f build.nix
+    - run: nix-build -A emacsGccDarwin
     - run: echo OK
