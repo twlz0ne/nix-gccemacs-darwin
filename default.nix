@@ -8,7 +8,7 @@ let
     "${lib.getLib stdenv.cc.cc}/lib"
     "${lib.getLib stdenv.glibc}/lib"
   ];
-  emacsGcc = builtins.foldl' (drv: fn: fn drv)
+  emacsGccDarwin = builtins.foldl' (drv: fn: fn drv)
     pkgs.emacs
     [
 
@@ -17,7 +17,7 @@ let
       (
         drv: drv.overrideAttrs (
           old: {
-            name = "emacsGcc";
+            name = "emacsGccDarwin";
             version = "28.0.50";
             src = pkgs.fetchFromGitHub {
               inherit (emacs-nativecomp) owner repo rev sha256;
@@ -63,11 +63,11 @@ _: _:
   {
     ci = (import ./nix {}).ci;
 
-    inherit emacsGcc;
+    inherit emacsGccDarwin;
 
-    emacsGccWrapped = pkgs.symlinkJoin {
-      name = "emacsGccWrapped";
-      paths = [ emacsGcc ];
+    emacsGccDarwinWrapped = pkgs.symlinkJoin {
+      name = "emacsGccDarwinWrapped";
+      paths = [ emacsGccDarwin ];
       buildInputs = [ pkgs.makeWrapper ];
       postBuild = ''
         wrapProgram $out/bin/emacs \
@@ -75,6 +75,6 @@ _: _:
       '';
       meta.platforms = pkgs.stdenv.lib.platforms.linux;
       passthru.nativeComp = true;
-      src = emacsGcc.src;
+      src = emacsGccDarwin.src;
     };
   }
