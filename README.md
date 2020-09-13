@@ -1,1 +1,1 @@
-# nix-gccemacs-ci
+# nix-gccemacs-darwin

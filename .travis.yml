@@ -1,0 +1,16 @@
+language: nix
+rvm: system
+os: osx
+
+matrix:
+  include:
+    - env: OSX=10.12
+      compiler: clang
+      osx_image: xcode9.2
+
+install:
+  - ./install.sh
+
+script:
+  - nix-env -i emacsGcc -f build.nix -v
+  - emacs --version
