@@ -49,6 +49,10 @@ let
               --replace '(emacs-repository-get-branch)' '"master"'
             '';
 
+            postFixup = old.postFixup + ''
+             ln -snf $out/lib/emacs/28.0.50/native-lisp $out/Applications/Emacs.app/Contents/native-lisp
+            '';
+
           }
         )
       )
