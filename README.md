@@ -21,12 +21,4 @@ Build gccemacs for macOS 10.15 or newer using Nix.
     nix-env -iA emacsGccDarwin -f https://github.com/twlz0ne/nix-gccemacs-darwin/archive/master.zip
     ```
 
-## Create symlink
-
-``` sh
-ln -snf $(nix path-info $(which emacs))/{lib/emacs/28.0.50/native-lisp,bin/native-lisp}
-```
-
----
-
 For macOS 10.12 see [nix-gccemacs-sierra](https://github.com/twlz0ne/nix-gccemacs-sierra).
