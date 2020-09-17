@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/twlz0ne/nix-gccemacs-darwin.svg?branch=master)](https://travis-ci.com/twlz0ne/nix-gccemacs-darwin)
+![CI](https://github.com/twlz0ne/nix-gccemacs-darwin/workflows/CI/badge.svg)
 
 # nix-gccemacs-darwin
 
