@@ -5,10 +5,10 @@
         "homepage": "http://www.gnu.org/software/emacs/",
         "owner": "emacs-mirror",
         "repo": "emacs",
-        "rev": "dc0cf16c7a60f36aafcf9b56513a855cefa7e1ad",
-        "sha256": "1q64zvjis4vd61gqxl3prx80jc1bp4haqqkcz5gmg66frn10qi93",
+        "rev": "f8505fd3d43dd95492855eac88922b5b27201e7a",
+        "sha256": "13ig9sa9nf4xgw7kx3hrbf7917h0zb54lnbykwbxfbgyx84mhrk6",
         "type": "tarball",
-        "url": "https://github.com/emacs-mirror/emacs/archive/dc0cf16c7a60f36aafcf9b56513a855cefa7e1ad.tar.gz",
+        "url": "https://github.com/emacs-mirror/emacs/archive/f8505fd3d43dd95492855eac88922b5b27201e7a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "emacs-overlay": {
