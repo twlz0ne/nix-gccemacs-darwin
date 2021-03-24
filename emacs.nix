@@ -29,13 +29,6 @@ let
             patches = [
               (
                 pkgs.fetchpatch {
-                  name = "clean-env.patch";
-                  url = "https://raw.githubusercontent.com/nix-community/emacs-overlay/master/patches/clean-env.patch";
-                  sha256 = "0lx9062iinxccrqmmfvpb85r2kwfpzvpjq8wy8875hvpm15gp1s5";
-                }
-              )
-              (
-                pkgs.fetchpatch {
                   name = "tramp-detect-wrapped-gvfsd.patch";
                   url = "https://raw.githubusercontent.com/nix-community/emacs-overlay/master/patches/tramp-detect-wrapped-gvfsd.patch";
                   sha256 = "1rvz725697md3ir618kkrccsxzd6n0p8yddq7rsh5jg8dbrvjvcx";
