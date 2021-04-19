@@ -1,4 +1,4 @@
-![CI](https://github.com/twlz0ne/nix-gccemacs-darwin/workflows/CI/badge.svg)
+[![CI](https://github.com/twlz0ne/nix-gccemacs-darwin/workflows/CI/badge.svg)](https://github.com/twlz0ne/nix-gccemacs-darwin/actions?query=workflow%3ACI)
 
 # nix-gccemacs-darwin
 
