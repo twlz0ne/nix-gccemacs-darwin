@@ -10,7 +10,7 @@ Build gccemacs for macOS 10.15 or newer using Nix.
 
     ``` sh
     git clone https://github.com/twlz0ne/nix-gccemacs-darwin
-    cd nix-gccemacs-darwin && nix-env -iA emacsGccDarwin
+    cd nix-gccemacs-darwin && nix-env -iA emacsGccDarwin -f default.nix
     ```
 
 - Pull pre-built binaries from Cachix (recommend)
@@ -22,3 +22,10 @@ Build gccemacs for macOS 10.15 or newer using Nix.
     ```
 
 For macOS 10.12 see [nix-gccemacs-sierra](https://github.com/twlz0ne/nix-gccemacs-sierra).
+
+## Usage 
+Launch emacs from your `nix-env`
+
+``` sh
+emacs </dev/null &>/dev/null &
+```
