@@ -24,7 +24,7 @@ let
             };
 
             configureFlags = old.configureFlags
-            ++ [ "--with-ns" ];
+            ++ [ "--with-ns" "--with-native-compilation" "--with-cairo" "--with-harfbuzz" ];
 
             patches = [
               (
